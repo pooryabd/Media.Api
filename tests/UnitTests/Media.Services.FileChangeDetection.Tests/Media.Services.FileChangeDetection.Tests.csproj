@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<CodeAnalysisRuleSet>..\..\..\_stylecop\stylecopTests.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="..\..\..\_stylecop\stylecop.json" Link="stylecop.json" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<IncludeMeziantouXunitParallelTestFramework>false</IncludeMeziantouXunitParallelTestFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="..\xunit.runner.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Meziantou.Xunit.ParallelTestFramework" Version="2.1.0" />
+		<PackageReference Include="Moq" Version="4.18.4" />
+		<PackageReference Include="Moq.AutoMock" Version="3.5.0" />
+		<PackageReference Include="AutoFixture" Version="4.18.0" />
+		<PackageReference Include="AutoFixture.AutoMoq" Version="4.18.0" />
+		<PackageReference Include="AutoFixture.Xunit2" Version="4.17.0" />
+		<PackageReference Include="FluentAssertions" Version="6.10.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+		<PackageReference Include="xunit" Version="2.4.2" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="coverlet.collector" Version="3.1.2">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\src\Media.Services.FileChangeDetection\Media.Services.FileChangeDetection.csproj" />
+	</ItemGroup>
+
+</Project>
